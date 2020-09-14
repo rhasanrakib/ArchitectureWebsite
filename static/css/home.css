@@ -1,0 +1,129 @@
+/****************Home Page*********************/
+.homePageUpperBannerImage {
+    background-image: url('/static/images/topBanner.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+
+}
+
+a {
+    outline: none;
+}
+
+.nav-tabs.rcolor .nav-item.show .nav-link,
+.nav-tabs.rcolor .nav-link.active {
+    color: #FF4814;
+    font-weight: 500;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #FF4814;
+}
+
+.nav-tabs.rcolor .nav-item.show .nav-link,
+.nav-tabs.rcolor .nav-link.active:hover {
+    background: transparent;
+}
+
+.nav-tabs.rcolor .nav-item.show .nav-link,
+.nav-tabs.rcolor .nav-link:hover {
+    background: #EEEEEE;
+}
+
+a.rclst {
+    color: #ff4814;
+    transition: opacity 0.2s
+}
+
+a.color:hover {
+    text-decoration: none;
+    color: initial;
+}
+
+a.rcls {
+    color: #ff4814;
+    color: var(--highlight);
+    text-decoration: none;
+    transition: opacity 0.2s
+}
+
+.hover-item:hover {
+    animation: shake 0.5s;
+    border: 1px solid #ff4814;
+    /* When the animation is finished, start again */
+    /*animation-iteration-count: infinite;*/
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+.slideanim {
+    visibility:hidden;
+    visibility:visible\9;
+}
+.slideanim.slide {                  
+    visibility: visible;                  
+    animation: slide 1s;
+}
+.slideanim::after {
+   
+    content: "";	
+    display: table;
+    clear: both;
+}
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    } 
+}
+.margin-top
+{
+	margin-top: 1rem;
+}
