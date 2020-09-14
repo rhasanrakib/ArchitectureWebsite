@@ -1,9 +1,13 @@
+
 /****************Home Page*********************/
 .homePageUpperBannerImage {
-    background-image: url('/static/images/topBanner.jpg');
+    /*/static/images/topBanner.jpg*/
+    /*background-image: url("{%static 'images/topBanner.jpg'%}");*/
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
+
+
 
 }
 

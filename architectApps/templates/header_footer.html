@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-5">
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/home.css'%}">
+    <script src="{%static 'js/float-panel.js'%}"></script>
+    {% block title %}
+    
+    {% endblock title %}
+</head>
+
+<body>
+<div class="container-fluid">
+{% for var1 in context_data %}    
+        
+        <div style="height: 100vh">
+            <div class="row homePageUpperBannerImage" style="background-image: url('{{var1.cover_pic.url}}');">
+                <div class="col text-center">
+                    <img src="{{var1.logo_pic.url}}" style="border-radius: 50%;margin-top: 2rem;max-height:222px;max-width: 222px">
+                    <h5 style="margin-top: 1rem;padding-bottom: 1rem">{{var1.company_moto|safe}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <h1><a class="color" href="{% url 'home' %}" style="color:black">{{var1.company_name|safe}}</a></h1>
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+        </div>
+{% block body %}
+{% endblock body %}
+</body>
+
+</html>
