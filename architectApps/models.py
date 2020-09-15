@@ -72,3 +72,40 @@ class Academic(models.Model):
     def __str__(self):
         """String for representing the MyModelName object (in Admin site etc.)."""
         return self.project_title
+
+
+class Professional(models.Model):
+    dateTime = models.DateTimeField(auto_now=False, auto_now_add=True)
+    project_cover_pic = models.ImageField(
+        upload_to='images/', help_text='Enter Project Cover Pic max-height:250px')
+    project_title = models.CharField(max_length=200,
+                                     help_text="Title Of the project", blank=True)
+    project_owner = models.CharField(
+        max_length=200, help_text="Owner Of the project", blank=True)
+    project_location = models.CharField(max_length=500,
+                                        help_text="Title Of the project", blank=True)
+    project_description = HTMLField(
+        blank=True, help_text='Enter Project Descriptions')
+    slide_image1 = models.ImageField(
+        upload_to='images/', help_text='Enter Company Cover Pic(max-height:250px)', blank=True)
+    slide_image2 = models.ImageField(
+        upload_to='images/', help_text='Enter Company Cover Pic(max-height:250px)', blank=True)
+    slide_image3 = models.ImageField(
+        upload_to='images/', help_text='Enter Company Cover Pic(max-height:250px)', blank=True)
+    slide_image4 = models.ImageField(
+        upload_to='images/', help_text='Enter Company Cover Pic(max-height:250px)', blank=True)
+    slide_image5 = models.ImageField(
+        upload_to='images/', help_text='Enter Company Cover Pic(max-height:250px)', blank=True)
+    external_pic_storage = models.URLField(max_length=200, blank=True)
+    external_video_storage = models.URLField(max_length=200, blank=True)
+
+    class Meta:
+        ordering = ['dateTime']
+
+    def get_absolute_url(self):
+        """Returns the url to access a particular instance of MyModelName."""
+        return reverse('details', kwargs={'pk': str(self.id), 'section': 'professional', })
+
+    def __str__(self):
+        """String for representing the MyModelName object (in Admin site etc.)."""
+        return self.project_title
